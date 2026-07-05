@@ -1,41 +1,41 @@
 {
-  "title": "Public Wi-Fi: The Invisible Trap",
+  "title": "Public Wi-Fi: The Free Trap",
   "scenes": [
     {
       "id": 1,
       "pose": "neutral",
-      "english_line": "Free coffee shop Wi-Fi? Sounds great, right?",
-      "turkish_line": "Bedava kafe Wi-Fi'ı? Kulağa harika geliyor, değil mi?"
+      "english_line": "Free coffee shop Wi-Fi? Sounds perfect for checking your bank account!",
+      "turkish_line": "Kafedeki ücretsiz Wi-Fi mi? Banka hesabına bakmak için mükemmel, değil mi?"
     },
     {
       "id": 2,
       "pose": "left",
-      "english_line": "Hackers can snoop on unsecured networks easily.",
-      "turkish_line": "Korumasız ağlarda hackerlar seni kolayca izleyebilir."
+      "english_line": "Wrong! Hackers love public networks—they can see everything you send.",
+      "turkish_line": "Yanlış! Hackerlar herkese açık ağları sever, gönderdiğin her şeyi görebilirler."
     },
     {
       "id": 3,
       "pose": "right",
-      "english_line": "They can steal passwords, emails, even bank logins.",
-      "turkish_line": "Şifrelerini, e-postalarını, hatta banka bilgilerini çalabilirler."
+      "english_line": "Fake hotspots named 'Free_WiFi' trick you into connecting to them.",
+      "turkish_line": "'Free_WiFi' gibi sahte ağlar seni kendilerine bağlanman için kandırır."
     },
     {
       "id": 4,
       "pose": "neutral",
-      "english_line": "Use a VPN before connecting to public networks.",
-      "turkish_line": "Herkese açık ağlara bağlanmadan önce VPN kullan."
+      "english_line": "Always use a VPN before logging into anything sensitive on public Wi-Fi.",
+      "turkish_line": "Herkese açık Wi-Fi'de hassas girişler yapmadan önce mutlaka VPN kullan."
     },
     {
       "id": 5,
       "pose": "left",
-      "english_line": "Avoid logging into sensitive accounts on public Wi-Fi.",
-      "turkish_line": "Herkese açık Wi-Fi'da önemli hesaplara giriş yapma."
+      "english_line": "And never do banking or shopping without one—wait till you're home!",
+      "turkish_line": "VPN yoksa asla bankacılık veya alışveriş yapma, eve varana kadar bekle!"
     },
     {
       "id": 6,
       "pose": "right",
-      "english_line": "Stay safe—your data is worth protecting!",
-      "turkish_line": "Güvende kal—verilerin korunmaya değer!"
+      "english_line": "Stay safe: think before you connect, not after you're hacked!",
+      "turkish_line": "Güvende kal: hacklenmeden önce düşün, sonra değil!"
     }
   ]
 }
