@@ -1,0 +1,51 @@
+name: Render Cyber Cartoon Episode
+
+on:
+  workflow_dispatch:
+    inputs:
+      storyboard_path:
+        description: "Repo içindeki storyboard JSON dosyasının yolu"
+        required: true
+        default: "storyboards/latest.json"
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Setup Python (edge-tts için)
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install system deps (ffmpeg + Chromium bağımlılıkları)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
+      - name: Install Node deps
+        working-directory: scripts
+        run: npm install
+
+      - name: Install edge-tts
+        run: pip install edge-tts
+
+      - name: Render episode
+        working-directory: scripts
+        run: node render.js "../${{ github.event.inputs.storyboard_path }}"
+
+      - name: Upload rendered video as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rendered-episode
+          path: |
+            scripts/output/final.mp4
+            scripts/output/subtitles_tr.srt
+          retention-days: 7
