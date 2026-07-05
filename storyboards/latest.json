@@ -1,5 +1,5 @@
 {
-  "title": "Public Wi-Fi: The Invisible Trap",
+  "title": "Public Wi-Fi: The Free Trap",
   "scenes": [
     {
       "id": 1,
@@ -10,32 +10,32 @@
     {
       "id": 2,
       "pose": "left",
-      "english_line": "Hackers can snoop on unsecured networks easily.",
-      "turkish_line": "Bilgisayar korsanları güvensiz ağları kolayca dinleyebilir."
+      "english_line": "Hackers can spy on unencrypted networks easily.",
+      "turkish_line": "Hackerlar şifrelenmemiş ağları kolayca izleyebilir."
     },
     {
       "id": 3,
       "pose": "right",
-      "english_line": "They can steal passwords, emails, even bank logins.",
-      "turkish_line": "Şifrelerinizi, e-postalarınızı, hatta banka girişlerinizi çalabilirler."
+      "english_line": "They see your passwords, messages, even bank logins.",
+      "turkish_line": "Şifrelerinizi, mesajlarınızı, hatta banka girişlerinizi görebilirler."
     },
     {
       "id": 4,
       "pose": "neutral",
-      "english_line": "Use a VPN to encrypt your connection first.",
-      "turkish_line": "Önce bağlantınızı şifrelemek için bir VPN kullanın."
+      "english_line": "Fake hotspots named 'Free_WiFi' are common traps too.",
+      "turkish_line": "'Free_WiFi' adlı sahte ağlar da yaygın tuzaklardır."
     },
     {
       "id": 5,
       "pose": "left",
-      "english_line": "Avoid entering sensitive info on public networks.",
-      "turkish_line": "Herkese açık ağlarda hassas bilgi girmekten kaçının."
+      "english_line": "Always use a VPN on public networks.",
+      "turkish_line": "Herkese açık ağlarda her zaman VPN kullanın."
     },
     {
       "id": 6,
       "pose": "right",
-      "english_line": "Stay smart, stay safe—think before you connect!",
-      "turkish_line": "Akıllı ol, güvende kal—bağlanmadan önce düşün!"
+      "english_line": "Stay smart, stay safe, sip your coffee happily!",
+      "turkish_line": "Akıllı ve güvenli kalın, kahvenizin tadını çıkarın!"
     }
   ]
 }
