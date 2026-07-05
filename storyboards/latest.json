@@ -1,41 +1,41 @@
 {
-  "title": "Public Wi-Fi: The Free Trap",
+  "title": "Public Wi-Fi: The Invisible Trap",
   "scenes": [
     {
       "id": 1,
       "pose": "neutral",
-      "english_line": "Free coffee shop Wi-Fi? Sounds perfect for checking your bank account!",
-      "turkish_line": "Bedava kafe Wi-Fi'si mi? Banka hesabına bakmak için harika!"
+      "english_line": "Free coffee shop Wi-Fi? Sounds great, right?",
+      "turkish_line": "Ücretsiz kafe Wi-Fi'ı? Kulağa harika geliyor, değil mi?"
     },
     {
       "id": 2,
       "pose": "left",
-      "english_line": "Wait! Hackers can snoop on unsecured public networks easily.",
-      "turkish_line": "Dur! Hackerlar güvensiz halka açık ağları kolayca dinleyebilir."
+      "english_line": "Hackers can lurk on the same network, watching you.",
+      "turkish_line": "Hackerlar aynı ağda gizlenip seni izleyebilir."
     },
     {
       "id": 3,
       "pose": "right",
-      "english_line": "They create fake hotspots too, named like the real cafe.",
-      "turkish_line": "Gerçek kafe gibi görünen sahte hotspot'lar da oluştururlar."
+      "english_line": "They can steal passwords, emails, even bank details.",
+      "turkish_line": "Şifrelerini, e-postalarını, hatta banka bilgilerini çalabilirler."
     },
     {
       "id": 4,
       "pose": "neutral",
-      "english_line": "Use a VPN to encrypt your connection on public networks.",
-      "turkish_line": "Halka açık ağlarda bağlantını şifrelemek için VPN kullan."
+      "english_line": "Always use a VPN before connecting to public Wi-Fi.",
+      "turkish_line": "Genel Wi-Fi'a bağlanmadan önce mutlaka VPN kullan."
     },
     {
       "id": 5,
       "pose": "left",
-      "english_line": "Avoid logging into sensitive accounts until you're on trusted Wi-Fi.",
-      "turkish_line": "Güvenilir bir ağa geçene kadar önemli hesaplara giriş yapma."
+      "english_line": "Avoid logging into sensitive accounts on open networks.",
+      "turkish_line": "Açık ağlarda hassas hesaplara giriş yapmaktan kaçın."
     },
     {
       "id": 6,
       "pose": "right",
-      "english_line": "Stay smart, stay safe—free Wi-Fi isn't always truly free!",
-      "turkish_line": "Akıllı ol, güvende kal—bedava Wi-Fi bazen bedel ister!"
+      "english_line": "Stay smart, stay safe — even with your coffee!",
+      "turkish_line": "Akıllı ol, güvende kal — kahveni içerken bile!"
     }
   ]
 }
