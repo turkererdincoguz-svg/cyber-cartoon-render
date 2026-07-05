@@ -1,0 +1,23 @@
+{
+  "title": "What is Phishing?",
+  "scenes": [
+    {
+      "id": 1,
+      "pose": "neutral",
+      "english_line": "Hey! Did you know one email can hack your whole company?",
+      "turkish_line": "Merhaba! Tek bir e-postanın tüm şirketini hackleyebileceğini biliyor muydun?"
+    },
+    {
+      "id": 2,
+      "pose": "left",
+      "english_line": "It's called phishing, and attackers use it to steal your passwords.",
+      "turkish_line": "Buna oltalama (phishing) deniyor ve saldırganlar şifreni çalmak için kullanıyor."
+    },
+    {
+      "id": 3,
+      "pose": "right",
+      "english_line": "Always check the sender's real email address before you click anything.",
+      "turkish_line": "Herhangi bir şeye tıklamadan önce gönderenin gerçek e-posta adresini kontrol et."
+    }
+  ]
+}

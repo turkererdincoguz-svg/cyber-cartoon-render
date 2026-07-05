@@ -1,0 +1,53 @@
+<!--
+  YER TUTUCU KARAKTER RIG'İ
+  -------------------------
+  Fotoğrafını çizgi film stiline çevirip parçalara ayırdıktan sonra,
+  aşağıdaki id'li grupları KENDİ SVG path/image'larınla değiştir:
+
+    #body           -> gövde
+    #head           -> kafa
+    #eyes-open      -> gözler (açık hali)
+    #eyes-closed    -> gözler (kırpma hali)
+    #mouth-closed   -> ağız kapalı
+    #mouth-open     -> ağız açık (konuşma)
+    #arm-left       -> sol kol
+    #arm-right      -> sağ kol
+
+  render.js bu id'lere CSS class ekleyip/çıkararak animasyonu yönetiyor.
+  Yapı bozulmadığı sürece görselleri birebir kendi tasarımınla değiştirebilirsin.
+-->
+<svg id="body" width="600" height="900" viewBox="0 0 600 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gövde (placeholder) -->
+  <ellipse cx="300" cy="600" rx="140" ry="200" fill="#2E5AAC"/>
+
+  <!-- Kollar -->
+  <g id="arm-left" class="gesture-neutral">
+    <rect x="140" y="480" width="40" height="180" rx="20" fill="#2E5AAC"/>
+  </g>
+  <g id="arm-right" class="gesture-neutral">
+    <rect x="420" y="480" width="40" height="180" rx="20" fill="#2E5AAC"/>
+  </g>
+
+  <!-- Kafa (placeholder - kendi stilize fotoğrafını buraya image olarak da koyabilirsin) -->
+  <g id="head">
+    <circle cx="300" cy="300" r="160" fill="#F2C89A"/>
+
+    <!-- Gözler -->
+    <g id="eyes-open" class="eyes-open">
+      <circle cx="250" cy="280" r="14" fill="#1A1A1A"/>
+      <circle cx="350" cy="280" r="14" fill="#1A1A1A"/>
+    </g>
+    <g id="eyes-closed" class="eyes-closed">
+      <rect x="235" y="278" width="30" height="4" fill="#1A1A1A"/>
+      <rect x="335" y="278" width="30" height="4" fill="#1A1A1A"/>
+    </g>
+
+    <!-- Ağız -->
+    <g id="mouth-closed" class="mouth-closed">
+      <rect x="270" y="360" width="60" height="6" rx="3" fill="#8A3B2E"/>
+    </g>
+    <g id="mouth-open" class="mouth-open">
+      <ellipse cx="300" cy="365" rx="30" ry="18" fill="#8A3B2E"/>
+    </g>
+  </g>
+</svg>

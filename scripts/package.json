@@ -1,0 +1,10 @@
+{
+  "name": "cyber-cartoon-renderer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Puppeteer ile SVG karakter animasyonu render eder, edge-tts sesiyle senkronlar, ffmpeg ile birleştirir.",
+  "type": "commonjs",
+  "dependencies": {
+    "puppeteer": "^22.0.0"
+  }
+}
