@@ -1,41 +1,41 @@
 {
-  "title": "Public WiFi: The Free Trap",
+  "title": "Public Wi-Fi: The Invisible Trap",
   "scenes": [
     {
       "id": 1,
       "pose": "neutral",
-      "english_line": "Free airport WiFi? Sounds great, right? Not so fast!",
-      "turkish_line": "Havaalanında bedava WiFi mi? Kulağa hoş geliyor ama dur bakalım!"
+      "english_line": "Free coffee shop Wi-Fi? Sounds great, right?",
+      "turkish_line": "Bedava kafe Wi-Fi'ı? Kulağa harika geliyor, değil mi?"
     },
     {
       "id": 2,
       "pose": "left",
-      "english_line": "Hackers create fake hotspots to steal your data instantly.",
-      "turkish_line": "Hackerlar verilerini çalmak için sahte ağlar oluşturur."
+      "english_line": "Hackers can snoop on unsecured networks easily.",
+      "turkish_line": "Korumasız ağlarda hackerlar seni kolayca izleyebilir."
     },
     {
       "id": 3,
       "pose": "right",
-      "english_line": "Never enter passwords or banking info on public networks.",
-      "turkish_line": "Halka açık ağlarda asla şifre veya banka bilgisi girme."
+      "english_line": "They can steal passwords, emails, even bank logins.",
+      "turkish_line": "Şifrelerini, e-postalarını, hatta banka bilgilerini çalabilirler."
     },
     {
       "id": 4,
       "pose": "neutral",
-      "english_line": "Use a VPN to encrypt your connection on the go.",
-      "turkish_line": "Bağlantını şifrelemek için VPN kullan."
+      "english_line": "Use a VPN before connecting to public networks.",
+      "turkish_line": "Herkese açık ağlara bağlanmadan önce VPN kullan."
     },
     {
       "id": 5,
       "pose": "left",
-      "english_line": "Turn off auto-connect so your phone doesn't join traps.",
-      "turkish_line": "Otomatik bağlanmayı kapat, telefonun tuzağa düşmesin."
+      "english_line": "Avoid logging into sensitive accounts on public Wi-Fi.",
+      "turkish_line": "Herkese açık Wi-Fi'da önemli hesaplara giriş yapma."
     },
     {
       "id": 6,
       "pose": "right",
-      "english_line": "Stay smart, stay private—think twice before you connect!",
-      "turkish_line": "Akıllı ol, gizliliğini koru—bağlanmadan önce iki kez düşün!"
+      "english_line": "Stay safe—your data is worth protecting!",
+      "turkish_line": "Güvende kal—verilerin korunmaya değer!"
     }
   ]
 }
