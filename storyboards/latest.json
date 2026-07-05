@@ -1,41 +1,41 @@
 {
-  "title": "Public Wi-Fi Peril",
+  "title": "Public Wi-Fi: The Free Trap",
   "scenes": [
     {
       "id": 1,
       "pose": "neutral",
-      "english_line": "Free coffee shop Wi-Fi? Tempting, but danger might be brewing too.",
-      "turkish_line": "Bedava kafe Wi-Fi'ı mı? Cazip ama tehlike de fincanda olabilir."
+      "english_line": "Free Wi-Fi at the cafe? Sounds great, right?",
+      "turkish_line": "Kafedeki bedava Wi-Fi mi? Kulağa harika geliyor, değil mi?"
     },
     {
       "id": 2,
       "pose": "left",
-      "english_line": "Hackers can spy on unsecured networks, stealing your passwords silently.",
-      "turkish_line": "Hackerlar güvensiz ağları izleyip şifrelerini sessizce çalabilir."
+      "english_line": "Hackers can snoop on unsecured public networks easily.",
+      "turkish_line": "Hackerlar güvenli olmayan halka açık ağları kolayca dinleyebilir."
     },
     {
       "id": 3,
       "pose": "right",
-      "english_line": "Fake hotspots mimic real ones, tricking you into connecting.",
-      "turkish_line": "Sahte hotspotlar gerçeğini taklit edip seni bağlanmaya kandırır."
+      "english_line": "Never enter passwords or bank info on public Wi-Fi.",
+      "turkish_line": "Halka açık Wi-Fi'de asla şifre veya banka bilgisi girme."
     },
     {
       "id": 4,
       "pose": "neutral",
-      "english_line": "Always use a VPN to encrypt your public Wi-Fi traffic.",
-      "turkish_line": "Herkese açık Wi-Fi'da trafiğini şifrelemek için VPN kullan."
+      "english_line": "Use a VPN to encrypt your connection instantly.",
+      "turkish_line": "Bağlantını şifrelemek için hemen bir VPN kullan."
     },
     {
       "id": 5,
       "pose": "left",
-      "english_line": "Avoid online banking or shopping while on public networks.",
-      "turkish_line": "Herkese açık ağlarda bankacılık veya alışveriş yapmaktan kaçın."
+      "english_line": "Turn off auto-connect so devices don't join rogue networks.",
+      "turkish_line": "Cihazların sahte ağlara katılmasın diye otomatik bağlanmayı kapat."
     },
     {
       "id": 6,
       "pose": "right",
-      "english_line": "Stay smart, stay safe—think twice before you connect!",
-      "turkish_line": "Akıllı ol, güvende kal—bağlanmadan önce iki kez düşün!"
+      "english_line": "Stay smart, stay safe, even with free Wi-Fi!",
+      "turkish_line": "Bedava Wi-Fi'de bile akıllı ve güvende kal!"
     }
   ]
 }
