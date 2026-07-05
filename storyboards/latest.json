@@ -1,41 +1,41 @@
 {
-  "title": "Public Wi-Fi: The Invisible Trap",
+  "title": "Public Wi-Fi: Free Connection, Costly Mistake",
   "scenes": [
     {
       "id": 1,
       "pose": "neutral",
-      "english_line": "Free coffee shop Wi-Fi? Sounds great, right?",
-      "turkish_line": "Ücretsiz kafe Wi-Fi'ı? Kulağa harika geliyor, değil mi?"
+      "english_line": "Free Wi-Fi at the cafe? Sounds perfect for checking my bank account!",
+      "turkish_line": "Kafedeki ücretsiz Wi-Fi mi? Banka hesabıma bakmak için mükemmel!"
     },
     {
       "id": 2,
       "pose": "left",
-      "english_line": "Hackers can lurk on the same network, watching you.",
-      "turkish_line": "Hackerlar aynı ağda gizlenip seni izleyebilir."
+      "english_line": "Wait — public networks let hackers snoop on your data easily.",
+      "turkish_line": "Dur biraz — herkese açık ağlarda hackerlar verini kolayca izleyebilir."
     },
     {
       "id": 3,
       "pose": "right",
-      "english_line": "They can steal passwords, emails, even bank details.",
-      "turkish_line": "Şifrelerini, e-postalarını, hatta banka bilgilerini çalabilirler."
+      "english_line": "Use a VPN to encrypt your connection before browsing anything sensitive.",
+      "turkish_line": "Hassas bir şeye bakmadan önce bağlantını şifrelemek için VPN kullan."
     },
     {
       "id": 4,
       "pose": "neutral",
-      "english_line": "Always use a VPN before connecting to public Wi-Fi.",
-      "turkish_line": "Genel Wi-Fi'a bağlanmadan önce mutlaka VPN kullan."
+      "english_line": "Also, avoid logging into banking apps on unknown public networks.",
+      "turkish_line": "Ayrıca bilinmeyen herkese açık ağlarda bankacılık uygulamalarına giriş yapma."
     },
     {
       "id": 5,
       "pose": "left",
-      "english_line": "Avoid logging into sensitive accounts on open networks.",
-      "turkish_line": "Açık ağlarda hassas hesaplara giriş yapmaktan kaçın."
+      "english_line": "Turn off auto-connect so your phone doesn't join risky hotspots.",
+      "turkish_line": "Telefonun riskli ağlara otomatik bağlanmasın diye bu özelliği kapat."
     },
     {
       "id": 6,
       "pose": "right",
-      "english_line": "Stay smart, stay safe — even with your coffee!",
-      "turkish_line": "Akıllı ol, güvende kal — kahveni içerken bile!"
+      "english_line": "Stay safe: VPN on, auto-connect off, sensitive logins never public!",
+      "turkish_line": "Güvende kal: VPN aç, otomatik bağlantı kapat, hassas girişleri asla herkese açık yapma!"
     }
   ]
 }
