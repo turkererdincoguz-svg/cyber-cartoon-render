@@ -4,38 +4,38 @@
     {
       "id": 1,
       "pose": "neutral",
-      "english_line": "Free Wi-Fi at the cafe? Sounds great, right?",
-      "turkish_line": "Kafedeki bedava Wi-Fi? Kulağa harika geliyor, değil mi?"
+      "english_line": "Free coffee shop Wi-Fi? Sounds great, right?",
+      "turkish_line": "Bedava kafe Wi-Fi'ı? Kulağa harika geliyor, değil mi?"
     },
     {
       "id": 2,
       "pose": "left",
-      "english_line": "But hackers can spy on that same network too.",
-      "turkish_line": "Ama hackerlar da aynı ağı gözetleyebilir."
+      "english_line": "Hackers can snoop on unsecured networks easily.",
+      "turkish_line": "Bilgisayar korsanları güvensiz ağları kolayca dinleyebilir."
     },
     {
       "id": 3,
       "pose": "right",
-      "english_line": "They can steal passwords, messages, even bank details.",
-      "turkish_line": "Şifrelerini, mesajlarını, hatta banka bilgilerini çalabilirler."
+      "english_line": "They can steal passwords, emails, even bank logins.",
+      "turkish_line": "Şifrelerinizi, e-postalarınızı, hatta banka girişlerinizi çalabilirler."
     },
     {
       "id": 4,
       "pose": "neutral",
-      "english_line": "Always use a VPN before connecting to public Wi-Fi.",
-      "turkish_line": "Herkese açık Wi-Fi'ye bağlanmadan önce mutlaka VPN kullan."
+      "english_line": "Use a VPN to encrypt your connection first.",
+      "turkish_line": "Önce bağlantınızı şifrelemek için bir VPN kullanın."
     },
     {
       "id": 5,
       "pose": "left",
-      "english_line": "Avoid logging into banking apps on open networks.",
-      "turkish_line": "Açık ağlarda bankacılık uygulamalarına giriş yapmaktan kaçın."
+      "english_line": "Avoid entering sensitive info on public networks.",
+      "turkish_line": "Herkese açık ağlarda hassas bilgi girmekten kaçının."
     },
     {
       "id": 6,
       "pose": "right",
-      "english_line": "Stay smart, stay safe—even at your favorite cafe!",
-      "turkish_line": "Akıllı ol, güvende kal—en sevdiğin kafede bile!"
+      "english_line": "Stay smart, stay safe—think before you connect!",
+      "turkish_line": "Akıllı ol, güvende kal—bağlanmadan önce düşün!"
     }
   ]
 }
