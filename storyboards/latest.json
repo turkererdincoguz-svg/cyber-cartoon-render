@@ -1,23 +1,41 @@
 {
-  "title": "What is Phishing?",
+  "title": "Public Wi-Fi Peril",
   "scenes": [
     {
       "id": 1,
       "pose": "neutral",
-      "english_line": "Hey! Did you know one email can hack your whole company?",
-      "turkish_line": "Merhaba! Tek bir e-postanın tüm şirketini hackleyebileceğini biliyor muydun?"
+      "english_line": "Free coffee shop Wi-Fi? Tempting, but danger might be brewing too.",
+      "turkish_line": "Bedava kafe Wi-Fi'ı mı? Cazip ama tehlike de fincanda olabilir."
     },
     {
       "id": 2,
       "pose": "left",
-      "english_line": "It's called phishing, and attackers use it to steal your passwords.",
-      "turkish_line": "Buna oltalama (phishing) deniyor ve saldırganlar şifreni çalmak için kullanıyor."
+      "english_line": "Hackers can spy on unsecured networks, stealing your passwords silently.",
+      "turkish_line": "Hackerlar güvensiz ağları izleyip şifrelerini sessizce çalabilir."
     },
     {
       "id": 3,
       "pose": "right",
-      "english_line": "Always check the sender's real email address before you click anything.",
-      "turkish_line": "Herhangi bir şeye tıklamadan önce gönderenin gerçek e-posta adresini kontrol et."
+      "english_line": "Fake hotspots mimic real ones, tricking you into connecting.",
+      "turkish_line": "Sahte hotspotlar gerçeğini taklit edip seni bağlanmaya kandırır."
+    },
+    {
+      "id": 4,
+      "pose": "neutral",
+      "english_line": "Always use a VPN to encrypt your public Wi-Fi traffic.",
+      "turkish_line": "Herkese açık Wi-Fi'da trafiğini şifrelemek için VPN kullan."
+    },
+    {
+      "id": 5,
+      "pose": "left",
+      "english_line": "Avoid online banking or shopping while on public networks.",
+      "turkish_line": "Herkese açık ağlarda bankacılık veya alışveriş yapmaktan kaçın."
+    },
+    {
+      "id": 6,
+      "pose": "right",
+      "english_line": "Stay smart, stay safe—think twice before you connect!",
+      "turkish_line": "Akıllı ol, güvende kal—bağlanmadan önce iki kez düşün!"
     }
   ]
 }
