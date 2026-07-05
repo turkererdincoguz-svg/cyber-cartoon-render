@@ -1,13 +1,12 @@
 /**
- * render.js
+ * render.js — v2 (Türkçe altyazı videoya gömülü)
  * -----------------------------------------------------------------------
  * Storyboard JSON'ı okur, her sahne için:
- *   1) edge-tts ile İngilizce seslendirme + kelime zaman damgaları üretir
- *   2) Puppeteer ile karakter SVG rig'ini o sahnenin repliğine göre
- *      (basit ağız aç/kapa + göz kırpma + jest) animasyonlu PNG frame'lere
- *      render eder
- *   3) ffmpeg ile frame'leri sesle birleştirip sahne videosunu üretir
- * Sonunda tüm sahneleri concat eder, Türkçe .srt üretir.
+ *   1) edge-tts ile İngilizce seslendirme üretir
+ *   2) Puppeteer ile karakter SVG rig'ini konuşma/kırpma animasyonuyla
+ *      PNG frame'lere render eder
+ *   3) ffmpeg ile frame + ses birleştirir
+ *   4) Türkçe altyazıyı .srt olarak üretir VE videoya gömer (hardsub)
  *
  * Kullanım: node render.js <storyboard.json yolu>
  * -----------------------------------------------------------------------
@@ -32,17 +31,11 @@ function sh(cmd) {
   execSync(cmd, { stdio: "inherit" });
 }
 
-/**
- * edge-tts CLI'yi çağırır: mp3 + kelime zaman damgalı .json üretir.
- * edge-tts açık kaynak, ücretsiz, API key gerektirmez.
- */
 function synthesize(text, outMp3, voice = "en-US-GuyNeural") {
-  const wordTimingsFile = outMp3.replace(".mp3", ".json");
   sh(
     `edge-tts --voice "${voice}" --text "${text.replace(/"/g, '\\"')}" ` +
-      `--write-media "${outMp3}" --write-subtitles "${wordTimingsFile}.vtt"`
+      `--write-media "${outMp3}"`
   );
-  // Ses süresini ffprobe ile ölç
   const durationOut = execSync(
     `ffprobe -v error -show_entries format=duration -of csv=p=0 "${outMp3}"`
   )
@@ -51,15 +44,6 @@ function synthesize(text, outMp3, voice = "en-US-GuyNeural") {
   return parseFloat(durationOut);
 }
 
-/**
- * Karakter rig HTML'ini oluşturur. character.svg içindeki katmanlar
- * (id="mouth-open", id="mouth-closed", id="eyes-open", id="eyes-closed",
- * id="arm-left", id="arm-right") CSS class'larla oynatılarak basit bir
- * "konuşma" animasyonu simüle edilir.
- *
- * NOT: assets/character/ altına kendi SVG parçalarını koyduğunda bu HTML
- * şablonu id'lere göre otomatik çalışır, değişiklik gerekmez.
- */
 function buildRigHtml(pose) {
   const svgContent = fs.readFileSync(
     path.join(CHAR_DIR, "character.svg"),
@@ -71,12 +55,13 @@ function buildRigHtml(pose) {
       <style>
         body { margin: 0; background: transparent; }
         .frame { width: 1080px; height: 1920px; display:flex; align-items:center; justify-content:center; }
+        .frame svg { width: 900px; height: auto; }
         .mouth-open { display: none; }
         .mouth-open.talking { display: block; }
         .mouth-closed.talking { display: none; }
         .eyes-open.blink { display: none; }
         .eyes-closed.blink { display: block; }
-        .gesture-${pose} { transform: rotate(-8deg); transform-origin: center; }
+        .gesture-${pose} { transform: rotate(-4deg); transform-origin: center; }
       </style>
     </head>
     <body>
@@ -100,10 +85,8 @@ async function renderSceneFrames(page, pose, durationSec, frameOffset) {
   await page.setContent(buildRigHtml(pose), { waitUntil: "load" });
 
   for (let i = 0; i < totalFrames; i++) {
-    // Basit ağız flap: her 3-4 frame'de bir aç/kapa (gerçek fonem senkronu
-    // değil ama ucuz ve inandırıcı bir "konuşuyor" efekti verir)
     const talking = Math.floor(i / 3) % 2 === 0;
-    const blink = i % (FPS * 3) < 3; // ~3 saniyede bir kısa kırpma
+    const blink = i % (FPS * 3) < 3;
     await page.evaluate(
       (t, b) => {
         window.setTalking(t);
@@ -119,6 +102,14 @@ async function renderSceneFrames(page, pose, durationSec, frameOffset) {
     await page.screenshot({ path: framePath });
   }
   return totalFrames;
+}
+
+function formatSrtTime(seconds) {
+  const h = String(Math.floor(seconds / 3600)).padStart(2, "0");
+  const m = String(Math.floor((seconds % 3600) / 60)).padStart(2, "0");
+  const s = String(Math.floor(seconds % 60)).padStart(2, "0");
+  const ms = String(Math.floor((seconds % 1) * 1000)).padStart(3, "0");
+  return `${h}:${m}:${s},${ms}`;
 }
 
 async function main() {
@@ -155,8 +146,6 @@ async function main() {
     );
     frameOffset += framesRendered;
 
-    // Türkçe .srt satırı (kelime bazlı değil, sahne bazlı zamanlama —
-    // basit ve yeterince senkron)
     const start = formatSrtTime(cumulativeTime);
     cumulativeTime += duration;
     const end = formatSrtTime(cumulativeTime);
@@ -166,7 +155,11 @@ async function main() {
 
   await browser.close();
 
-  // Frame'leri videoya çevir
+  // Türkçe altyazı dosyasını yaz (hem gömme için hem artifact olarak)
+  const srtPath = path.join(OUT_DIR, "subtitles_tr.srt");
+  fs.writeFileSync(srtPath, srtLines.join("\n"));
+
+  // Frame'leri sessiz videoya çevir
   sh(
     `ffmpeg -y -framerate ${FPS} -i "${FRAMES_DIR}/frame_%06d.png" ` +
       `-c:v libx264 -pix_fmt yuv420p "${OUT_DIR}/video_silent.mp4"`
@@ -182,23 +175,16 @@ async function main() {
     `ffmpeg -y -f concat -safe 0 -i "${concatListPath}" -c copy "${OUT_DIR}/audio_full.mp3"`
   );
 
-  // Video + ses birleştir
+  // Video + ses + GÖMÜLÜ TÜRKÇE ALTYAZI
+  // subtitles filtresi srt'yi videonun içine yakar (hardsub)
+  const srtForFilter = srtPath.replace(/\\/g, "/").replace(/:/g, "\\:");
   sh(
     `ffmpeg -y -i "${OUT_DIR}/video_silent.mp4" -i "${OUT_DIR}/audio_full.mp3" ` +
-      `-c:v copy -c:a aac -shortest "${OUT_DIR}/final.mp4"`
+      `-vf "subtitles='${srtForFilter}':force_style='FontName=Arial,FontSize=14,PrimaryColour=&H00FFFFFF,OutlineColour=&H00000000,Outline=2,Bold=1,MarginV=60,Alignment=2'" ` +
+      `-c:v libx264 -pix_fmt yuv420p -c:a aac -shortest "${OUT_DIR}/final.mp4"`
   );
 
-  fs.writeFileSync(path.join(OUT_DIR, "subtitles_tr.srt"), srtLines.join("\n"));
-
-  console.log("Render tamamlandı: output/final.mp4 + output/subtitles_tr.srt");
-}
-
-function formatSrtTime(seconds) {
-  const h = String(Math.floor(seconds / 3600)).padStart(2, "0");
-  const m = String(Math.floor((seconds % 3600) / 60)).padStart(2, "0");
-  const s = String(Math.floor(seconds % 60)).padStart(2, "0");
-  const ms = String(Math.floor((seconds % 1) * 1000)).padStart(3, "0");
-  return `${h}:${m}:${s},${ms}`;
+  console.log("Render tamamlandı: output/final.mp4 (Türkçe altyazı gömülü)");
 }
 
 main().catch((err) => {
